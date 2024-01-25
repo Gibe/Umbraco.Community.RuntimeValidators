@@ -1,0 +1,14 @@
+{
+    "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+    "Category": "Developer Tools",
+    "PackageType": "Package",
+    "DocumentationUrl": "https://github.com/Gibe/Umbraco.Community.RuntimeValidators",
+    "IssueTrackerUrl": "https://github.com/Gibe/Umbraco.Community.RuntimeValidators/issues",
+    "Tags": ["Azure", "Load Balancing", "Runtime Validators"],
+    "AuthorDetails": {
+        "Name": "Gibe Digital",
+        "ImageUrl": "https://github.com/gibe.png",
+        "SyncContributorsFromRepository": true
+    }
+}
+

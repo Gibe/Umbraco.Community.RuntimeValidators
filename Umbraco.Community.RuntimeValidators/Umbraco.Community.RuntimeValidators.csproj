@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<Authors>stevetemple,warrenbuckley</Authors>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/Gibe/Umbraco.Community.RuntimeValidators</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>Gibe;Umbraco;</PackageTags>
+		<Description>A community project of Umbraco runtime validators to add to your projects to ensure your site has the correct configuration.</Description>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+		<!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+		<!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	</PropertyGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Umbraco.Cms.Core" Version="10.1.0" />
+		<PackageReference Include="Umbraco.Cms.Infrastructure" Version="10.1.0" />
+	</ItemGroup>
+
+</Project>
