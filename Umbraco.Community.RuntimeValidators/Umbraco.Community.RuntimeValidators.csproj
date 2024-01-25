@@ -4,13 +4,20 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<Authors>stevetemple,warrenbuckley</Authors>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Title>Umbraco Community Runtime Validators</Title>
+		<Description>A community project of Umbraco runtime validators to add to your projects to ensure your site has the correct configuration.</Description>
+		<Authors>SteveTemple,WarrenBuckley</Authors> <!-- CSV of Nuget Package Authors/Usernames -->
+		<Company>Gibe Digital</Company>
+		<Copyright>Copyright (c) 2024 Gibe Digital Ltd</Copyright>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageIcon>Umbraco.Community.Runtime.Validators.Logo.png</PackageIcon>
+		<PackageTags>umbraco-marketplace;umbraco;runtime-validators;validators;</PackageTags>
 		<RepositoryUrl>https://github.com/Gibe/Umbraco.Community.RuntimeValidators</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<PackageTags>Gibe;Umbraco;</PackageTags>
-		<Description>A community project of Umbraco runtime validators to add to your projects to ensure your site has the correct configuration.</Description>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -22,16 +29,21 @@
 
 		<!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		
 	</PropertyGroup>
-	
+
 	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All"/>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<None Include="..\README.md">
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\Umbraco.Community.Runtime.Validators.Logo.png">
+		  <Pack>True</Pack>
+		  <PackagePath>\</PackagePath>
 		</None>
 	</ItemGroup>
 
