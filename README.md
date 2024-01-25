@@ -91,7 +91,7 @@ For further information and documentation about [Umbraco runtime modes, please r
 
 
 ## Requirements
-This class library is built against Umbraco 10.1.0 where the concept of RuntimeValidators was introduced, so your Umbraco build will need to use
+This class library is built against Umbraco 10.1.0 where the concept of RuntimeValidators was introduced, so your Umbraco build will need to use a minimum version of 10.1.0 or newer.
 
 
 ### Attributions
