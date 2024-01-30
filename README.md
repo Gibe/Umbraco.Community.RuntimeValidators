@@ -83,7 +83,7 @@ For further information and documentation about [Umbraco runtime modes, please r
 		"CMS": {
 			"Runtime": {
 				"Mode" : "Production"
-            }
+			}
 		}
 	}
 }
