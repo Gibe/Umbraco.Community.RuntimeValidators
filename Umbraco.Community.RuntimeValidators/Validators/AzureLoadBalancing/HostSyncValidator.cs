@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Options;
 using System.Diagnostics.CodeAnalysis;
 using Umbraco.Cms.Core.Configuration.Models;
 using Umbraco.Cms.Infrastructure.Runtime;
@@ -10,11 +10,11 @@ namespace Umbraco.Community.RuntimeValidators.Validators.AzureLoadBalancing
 		private readonly IOptionsMonitor<GlobalSettings> _globalSettings;
 
 		public HostSyncValidator(IOptionsMonitor<GlobalSettings> globalSettings)
-        {
+		{
 			_globalSettings = globalSettings;
 		}
 
-        public bool Validate(RuntimeMode runtimeMode, [NotNullWhen(false)] out string? validationErrorMessage)
+		public bool Validate(RuntimeMode runtimeMode, [NotNullWhen(false)] out string? validationErrorMessage)
 		{
 			// Dont bother checking and say its OK to run if we are not in production mode
 			if (runtimeMode != RuntimeMode.Production)

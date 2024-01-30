@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Options;
 using System.Diagnostics.CodeAnalysis;
 using Umbraco.Cms.Core.Configuration;
 using Umbraco.Cms.Core.Configuration.Models;
@@ -11,12 +11,12 @@ namespace Umbraco.Community.RuntimeValidators.Validators.AzureLoadBalancing
 		private IOptionsMonitor<HostingSettings> _hostingSettings;
 
 		public TempFilesValidator(IOptionsMonitor<HostingSettings> hostingSettings)
-        {
+		{
 			_hostingSettings = hostingSettings;
 
 		}
 
-        public bool Validate(RuntimeMode runtimeMode, [NotNullWhen(false)] out string? validationErrorMessage)
+		public bool Validate(RuntimeMode runtimeMode, [NotNullWhen(false)] out string? validationErrorMessage)
 		{
 			// Dont bother checking and say its OK to run if we are not in production mode
 			if (runtimeMode != RuntimeMode.Production)
