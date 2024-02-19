@@ -10,12 +10,12 @@ namespace Umbraco.Community.RuntimeValidators.Validators.AzureLoadBalancing
 	public class ExamineValidator : IRuntimeModeValidator
 	{
 		private readonly IOptionsMonitor<IndexCreatorSettings> _indexCreatorSettings;
-		private readonly IServerRegistrationService _serverRegistrationService;
+		private readonly IServerRoleAccessor _serverRoleAccessor;
 
-		public ExamineValidator(IOptionsMonitor<IndexCreatorSettings> indexCreatorSettings, IServerRegistrationService serverRegistrationService)
+		public ExamineValidator(IOptionsMonitor<IndexCreatorSettings> indexCreatorSettings, IServerRoleAccessor	serverRoleAccessor)
 		{
 			_indexCreatorSettings = indexCreatorSettings;
-			_serverRegistrationService = serverRegistrationService;
+			_serverRoleAccessor = serverRoleAccessor;
 		}
 
 		public bool Validate(RuntimeMode runtimeMode, [NotNullWhen(false)] out string? validationErrorMessage)
@@ -29,7 +29,7 @@ namespace Umbraco.Community.RuntimeValidators.Validators.AzureLoadBalancing
 
 			// Examine and Lucene Config
 			// https://docs.umbraco.com/umbraco-cms/fundamentals/setup/server-setup/load-balancing/azure-web-apps#lucene-examine-configuration
-			var currentServerRole = _serverRegistrationService.GetCurrentServerRole();
+			var currentServerRole = _serverRoleAccessor.CurrentServerRole;
 
 			// Front End Scaling Servers
 			if (currentServerRole == ServerRole.Subscriber)
