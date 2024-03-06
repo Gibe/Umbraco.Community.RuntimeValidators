@@ -7,15 +7,10 @@ namespace Umbraco.Community.RuntimeValidators
 	{
 		public static RuntimeModeValidatorCollectionBuilder AddAzureLoadBalancingValidators(this RuntimeModeValidatorCollectionBuilder builder)
 		{
-			if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("WEBSITE_INSTANCE_ID")))
-			{
 				return builder
 					.Add<TempFilesValidator>()
 					.Add<HostSyncValidator>()
 					.Add<ExamineValidator>();
-			}
-
-			return builder;
 		}
 	}
 }
