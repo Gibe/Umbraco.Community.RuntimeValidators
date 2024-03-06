@@ -47,8 +47,12 @@ public class RuntimeValidatorsComposer : IComposer
 {
 	public void Compose(IUmbracoBuilder builder)
 	{
-		builder.RuntimeModeValidators()
-			.AddAzureLoadBalancingValidators();
+		// check running on a Azure Web App
+		if (!string.IsNullOrEmpty(Environment.GetEnvironmentVariable("WEBSITE_INSTANCE_ID")))
+			{
+				builder.RuntimeModeValidators()
+					.AddAzureLoadBalancingValidators();
+			}
 	}
 }
 ```

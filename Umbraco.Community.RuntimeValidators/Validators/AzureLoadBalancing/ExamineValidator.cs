@@ -1,7 +1,6 @@
 using Microsoft.Extensions.Options;
 using System.Diagnostics.CodeAnalysis;
 using Umbraco.Cms.Core.Configuration.Models;
-using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Sync;
 using Umbraco.Cms.Infrastructure.Runtime;
 
@@ -43,9 +42,9 @@ namespace Umbraco.Community.RuntimeValidators.Validators.AzureLoadBalancing
 			// Single CMS/Admin Server
 			else if (currentServerRole == ServerRole.SchedulingPublisher)
 			{
-				if (_indexCreatorSettings.CurrentValue.LuceneDirectoryFactory != LuceneDirectoryFactory.SyncedTempFileSystemDirectoryFactory)
+				if (_indexCreatorSettings.CurrentValue.LuceneDirectoryFactory != LuceneDirectoryFactory.SyncedTempFileSystemDirectoryFactory && _indexCreatorSettings.CurrentValue.LuceneDirectoryFactory != LuceneDirectoryFactory.TempFileSystemDirectoryFactory)
 				{
-					validationErrorMessage = "Umbraco:CMS:Examine:LuceneDirectoryFactory needs to be set to 'SyncedTempFileSystemDirectoryFactory' in production mode for SchedulingPublisher (Admin) server.";
+					validationErrorMessage = "Umbraco:CMS:Examine:LuceneDirectoryFactory needs to be set to 'SyncedTempFileSystemDirectoryFactory' or 'TempFileSystemDirectoryFactory' in production mode for SchedulingPublisher (Admin) server.";
 					return false;
 				}
 			}
